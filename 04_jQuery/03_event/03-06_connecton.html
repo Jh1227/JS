@@ -1,0 +1,87 @@
+
+<!-- 03_event/03-06_connecton.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03-06_connecton</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+<style type="text/css">
+.on { background-color: purple; color: white; }
+</style>
+</head>
+<body>
+	<h1>이벤트 연결</h1>
+	<br>
+	<div id ="c1">
+		<button>클릭 1</button>
+	</div>
+	<br>
+	<div id ="c2">
+		<button>클릭 2-1</button> &nbsp; <button>클릭 2-2</button>
+	</div>
+	<br>
+	<div id ="c3">
+		<button>클릭 3</button>
+	</div>
+	<br>
+	<div id ="c4">
+		<button>클릭 4</button>
+	</div>
+	<br>
+	<div id ="c5">
+		<button>클릭 5</button>
+	</div>
+	<br>
+	<div id ="c6">
+		<button>클릭 6</button>
+	</div>
+	<br>
+	<div id ="c7">
+		<p>클릭 7</p>
+	</div>
+	<br>
+	
+	<!-- java script -->
+	<script type="text/javascript">
+		// button 요소에 click 이벤트 연결
+		$("#c1 button").on("click", function(){
+			alert("이벤트 연결 성공 !!!");
+		});
+		
+		// #c2 하위 button 요소에 click 이벤트 연결
+		$("#c2").on("click", "button", function(){
+			alert("이벤트 연결 성공!!");
+		});
+		
+		// 이벤트를 객체 리터럴 방식으로 연결
+		$("#c3 button").on({mouseenter: function(){
+			$(this).toggleClass("on");
+			}, mouseleave: function(){
+			$(this).toggleClass("on");
+			}
+		});
+		
+		// 이벤트 발생하면 함수 실행
+		function showEvent(){
+			alert("이벤트 연결~");
+		}
+		$("#c4 button").on("click", showEvent);
+		
+		// 이벤트제거
+		$("#c5 button").on("click", function(){
+			alert("이벤트 제거~");
+		}).off(); 
+		
+		// 이벤트 한번만 실행
+		$("#c6 button").one("click", function(){
+			alert("한번만 실행!!");
+		});
+		
+		$("#c7").on("click", function(){
+			$("p", this).css("background", "yellow");
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+<!-- 03_event/03-08_event-object.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03-08_event-object-1</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+<style type="text/css">
+* { margin: 0; padding: 0; }
+.display { border: 1px solid #cccccc; }
+</style>
+</head>
+<body>
+	<h1>이벤트 객체 - 1</h1>
+	<br>
+	<button>이벤트 객체 보기</button>
+	<div class ="display">이벤트 객체</div>
+	
+	<!-- java script -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(event){
+				$.each(event, function(properties, value){
+					$(".display").append("<p>" + properties + " - " + value + "</p>");
+				});
+			});
+		});
+	</script>
+</body>
+</html>

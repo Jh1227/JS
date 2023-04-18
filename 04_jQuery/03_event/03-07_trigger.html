@@ -1,0 +1,43 @@
+
+<!-- 03_event/03-07_trigger.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03-07_trigger</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+<style type="text/css">
+* { margin: 0; padding: 0; }
+body { overflow: hidden; }
+#con_1 { height: 100px; background-color: green; transform: translateX(-98%); transition: all 0.5s ease; }
+#con_2 { height: 100px; background-color: skyblue; transform: translateX(-98%); transition: all 0.5s ease; }
+#con_1.on, #con_2.on { transform: translateX(0); }
+</style>
+</head>
+<body>
+	<h1>이벤트 강제 실행</h1>
+	<br>
+	<div id ="con_1"></div>
+	<div id ="con_2"></div>
+	<button>클릭 1</button>
+	<button>클릭 2</button>
+	<button>클릭 all</button>
+	
+	<!-- java script -->
+	<script type="text/javascript">
+		$("button:eq(0)").on("click", function(){
+			$("#con_1").toggleClass("on");
+		}).trigger("click");
+		
+		$("button:eq(1)").on("click", function(){
+			$("#con_2").toggleClass("on");
+		}).trigger("click");
+		
+		$("button:eq(2)").on("click", function(){
+			$("button:eq(0)").trigger("click");
+			$("button:eq(1)").trigger("click");
+		});
+	</script>
+</body>
+</html>

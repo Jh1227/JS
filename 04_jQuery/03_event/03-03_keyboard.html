@@ -1,0 +1,35 @@
+
+<!-- 03_event/03-03_keyboard.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03-03_keyboard</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+<style type="text/css">
+body { font-size: 20px; }
+textarea { border: 1px solid gray; width: 300px; height: 200px; }
+textarea.on { background-color: beige; color: #333333; }
+#display { width: 300px; height: 200px; border: 1px solid red; overflow: auto; word-break: break-all; }  
+                                        /* word-break : 줄바꿈 속성 ( break-all : 문자 단위, keep-all : 단어 단위 ) */
+</style>
+</head>
+<body>
+	<h1>keyboard 이벤트</h1>
+	<br>
+	<textarea></textarea>
+	<div id ="display"></div>
+	
+	<!-- java script -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("textarea").keydown(function(){
+				$(this).addClass("on");
+			}).keyup(function(){
+				$("#display").text($(this).val()); /* $(this).val() : 요소의 값을 가져오기 */
+			});
+		});
+	</script>
+</body>
+</html>

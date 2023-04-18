@@ -1,0 +1,63 @@
+
+<!-- 03_event/03-09_event-object-2.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03-09_event-object-2</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+<style type="text/css">
+* { margin: 0; padding: 0; }
+li { list-style: none; }
+body { font-family: "돋움", sans-serif; font-size: 12px; color: #333333; height: 100%; }
+a { font-family: "돋움", sans-serif; font-size: 12px; color: #333333; text-decoration: none; line-height: 100%; }
+
+/* select */
+#select { width: 200px; position: absolute; right: 0; bottom: 0; background-color: #ffffff; z-index: 100; }
+#select a { display: block; height: 20px; }
+#select #title { border: 1px solid #cccccc; }
+#select #title a { background-color: url(../../image/jquery_image/icon.gif) no-repeat 100% 0; }
+#select #title a.on { background-position: 100% -20px; }
+#select #list { border: 1px solid #cccccc; background-color: #ffffff; position: absolute; left: 0; top: -94px; width: 200px; box-sizing: border-box; display: none; }
+#select #list.on { display: block; }
+#select #list a { padding: 5px 10px; border-bottom: 1px solid #dddddd; }
+#select #list a:hover,
+#select #list a:active,
+#select #list a:focus { background: #ff6600; color:#fff; }
+#con { background-color: #ddd; height: 100%; }
+</style>
+</head>
+<body>
+	<h1> 이벤트 객체 - 2</h1>
+	<div id ="select">
+		<div id ="title"><a href ="#">사이트 이동</a></div>
+		<ul id ="list">
+			<li><a href ="http://www.naver.com" target ="_blank">NAVER</a></li>
+			<li><a href ="http://www.daum.net" target ="_blank">DAUM</a></li>
+			<li><a href ="http://www.google.com" target ="_blank">Google</a></li>
+		</ul>
+	</div>
+	<div id ="con"></div>
+	
+	<!-- java script -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#title a").click(function(event){
+				if($(this).hasClass("on")){
+					$(this).add("#list").removeClass("on");
+				} else {
+					$(this).add("#list").addClass("on");
+				}
+				//event.preventDefault(); // 기본 이벤트 실행 막기
+				//event.stopPropagation(); // 상위 요소의 이벤트 발생 막기
+				return false; // 위에 2가지를 한방에 해결하는 방법
+			});
+			
+			$("html").click(function(){
+				$("#title a").add("#list").removeClass("on");
+			});
+		});
+	</script>
+</body>
+</html>
