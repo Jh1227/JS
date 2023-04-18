@@ -1,0 +1,36 @@
+
+<!-- 01_basic/01-3_js-input.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01-3_js-input</title>
+<script type="text/javascript">
+	/*
+		alert()
+		- 브라우저에 작은 창을 띄우는 메서드 입니다
+	*/
+	window.alert('윈도우 화면에 메세지 전달~');
+	
+	/*
+		prompt()
+		- 브라우저에 입력 상자를 띄우는 메서드 입니다
+	*/
+	var value = 0;
+	prompt('숫자를 입력하세요', value);
+	document.write(value);
+	
+	/*
+		confirm()
+		- 사용자 문자열과 함께 '확인', '취소' 버튼을 표시합니다
+	*/
+	var check = confirm('확인 또는 취소 버튼을 클릭하세요');
+	alert(check);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

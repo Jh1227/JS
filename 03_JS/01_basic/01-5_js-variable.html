@@ -1,0 +1,56 @@
+
+<!-- 01_basic/01-5_js-variable.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>01-5_js-variable</title>
+<script type="text/javascript">
+	/*
+		# var 를 사용한 변수 선언
+	*/
+	var va;
+	document.write(va, '<br>');
+	console.log(va);
+	
+	var vb = 7;
+	document.write('vb : ', vb, '<br>');
+	console.log('vb : ', vb);
+	
+	var vc, vd;
+	vc = 1;
+	vd = 2;
+	document.write('vc : ', vc, ' - vd : ', vd, '<br><br>');
+	
+	/* 
+		# let 키워드를 사용한 변수 선언(ES6)
+		- EX6(ECMAScript 6) 에서 추가 되었습니다
+	*/
+	{
+		var seven = 7;
+		console.log('seven : ', seven);
+		
+		let five = 5;
+		console.log('five : ', five);
+	}
+	document.write('seven : ', seven, '<br><br>');
+	//document.write('five : ', five); >> Error
+	
+	/* 
+		# const 키워드 상수
+		- const 키워드를 사용해서 변수를 선언하면 값을 변경할 수 없습니다
+		- 선언과 동시에 값을 지정해야 합니다
+	*/
+	//const ca; >> Error
+	const cb = 2;
+	document.write('cb : ', cb, '<br><br>');
+	
+	//cb = 3; >> Error
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
