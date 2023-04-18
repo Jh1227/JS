@@ -1,0 +1,50 @@
+
+<!-- 02_control/02-3_for.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02-3_for</title>
+<style type="text/css">
+table { border: 1px solid gray; border-collapse: collapse; }
+td { border: 1px solid gray; text-align: center; padding: 5px; }
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		var last = prompt('마지막 숫자 입력');
+		var sum = 0;
+		
+		for (var i=1; i<=last; i++) {
+			sum += i;
+			document.write("i : ", i, " - sum : ", sum, '<br>');
+		}
+		document.write('<b>1 ~ ', last, ' 까지의 합 : ', sum, '</b>');
+		document.write('<br><br>');
+		
+		var gugudan = '<table>';
+		var dan = 2;
+		
+		for (var su=1; su<=9; su++) {
+			gugudan += '<tr><td>' + dan + ' X ' + su + ' = ' + dan*su + '</td></tr>';
+		}
+		gugudan += '</table>';
+		// gugudan -> <table></table>
+		document.write(gugudan);
+		document.write('<br><br>');
+		
+		// 2 ~ 9 단의 값을 테이블을 사용해서 출력하세요
+		var quiz ='<table>';
+		for (var i = 2; i <= 9; i++) {
+			quiz += '<tr>';
+			for (var j = 1; j <= 9; j++) {
+				quiz += '<td>' + i + ' X ' + j + ' = ' + i*j + '</td>';
+			}
+			quiz += '</tr>';
+		}
+		quiz += '</table>';
+		document.write(quiz);
+	</script>
+</body>
+</html>

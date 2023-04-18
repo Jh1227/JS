@@ -1,0 +1,30 @@
+
+<!-- 02_control/02-4_while.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02-4_while</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var data = 1;
+		while (data <= 10) {
+			document.write('data : ', data, '<br>');
+			++data;
+		}
+		document.write('<br>');
+		
+		var value = 5;
+		var sum = 0;
+		do {
+			sum += value;
+			value += 5;
+			document.write('value : ', value, ' - sum : ', sum, '<br>');
+		} while (sum <= 100);
+		document.write('<strong>sum : ', sum, '</strong>');
+		
+	</script>
+</body>
+</html>

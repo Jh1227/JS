@@ -1,0 +1,43 @@
+
+<!-- 02_control/02-6_Quiz_control.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02-6_Quiz_control</title>
+</head>
+<body>
+	<script type="text/javascript">
+	/* 
+		html, css, js 점수를 입력받습니다
+		각 과목별 점수가 40 이상이면서, 평균이 60 이상이면 합격입니다
+		- 과락일 경우 어떠한 과목이 과락인지 알려줍니다
+	*/
+	var html = Number(prompt('html 점수를 입력하세요'));
+	var css = Number(prompt('css 점수를 입력하세요'));
+	var js = Number(prompt('js 점수를 입력하세요'));
+	var tot = html + css + js;
+	var avg = tot / 3;
+	
+	if (avg >= 60) {
+		
+		if (html < 40 && css < 40 && js < 40) {
+			document.write('점수 불합격!<br>');
+		} else if (html < 40) {
+			document.write('html 점수\n', html , '=> \n과락!<br>');
+		} else if (css < 40) {
+			document.write('css 점수\n', css , '=> \n과락!<br>');
+		} else if (js < 40) {
+			document.write('js 점수\n', js , '=> \n과락!<br>');
+		} else {
+			document.write('합격입니다!!!<br>');
+		}
+		
+	} else {
+		document.write('불합격!!<br>');
+	}
+	document.write('합계 : ', tot, ' - 평균 : ', avg, '<br>');
+	</script>
+</body>
+</html>
