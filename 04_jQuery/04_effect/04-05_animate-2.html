@@ -1,0 +1,90 @@
+
+<!-- 04_effect/04-05_animate-2.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>04-05_animate-2</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+<style type="text/css">
+* { margin: 0; padding: 0; }
+div { width: 100px; height: 100px; background-color: silver; position: relative; }
+</style>
+</head>
+<body>
+	<h1>Custom 효과2</h1>
+	<br>
+	<button>start 1</button> &nbsp; <button>stop()</button>
+	<div class ="as_1"></div>
+	<br>
+	<button>start 2</button> &nbsp; <button>stop(true)</button>
+	<div class ="as_2"></div>
+	<br>
+	<button>start 3</button> &nbsp; <button>stop(false, true)</button>
+	<div class ="as_3"></div>
+	<br>
+	<button>start 4</button> &nbsp; <button>stop(true, true)</button>
+	<div class ="as_4"></div>
+	<br>
+	
+	<!-- javascript -->
+	<script type="text/javascript">
+		/*
+			# stop()
+			- $(selector).stop( clearQueue, jumpToEnd );
+			  > clearQueue : 대기하고 있는 애니메이션 삭제 유무처리
+			  				 true : 제거, false : 유지
+			    jumpToEnd  : 다음에 대기하고 있는 애니메이션을 건너뛸 것인가에 대한 처리
+			    			 true : 건너띄기, false : 건너띄기 X
+			  > 두 매개변수의 default 값은 false
+		*/
+		$(document).ready(function(){
+			function move(target){
+				target = $(target);
+				target.animate({left: 200}, 2000).animate({width: 200}, 2000).animate({height: 200});
+			}
+			
+			// stop() : 현재 애니메이션 stop, 다음 애니메이션 실행
+			$("button:eq(0)").click(function(){
+				move(".as_1");
+				$(this).prop("disabled", true);
+			});
+			
+			$("button:eq(1)").click(function(){
+				$(".as_1").stop();
+			});
+			
+			// stop(true) : 현재 애니메이션 stop, 다음 애니메이션 삭제
+			$("button:eq(2)").click(function(){
+				move(".as_2");
+				$(this).prop("disabled", true);
+			});
+			
+			$("button:eq(3)").click(function(){
+				$(".as_2").stop(true);
+			});
+			
+			// stop(false, true) : 현재 애니메이션 건너띄고, 다음 애니메이션 실행
+			$("button:eq(4)").click(function(){
+				move(".as_3");
+				$(this).prop("disabled", true);
+			});
+			
+			$("button:eq(5)").click(function(){
+				$(".as_3").stop(false, true);
+			});
+			
+			// stop(true, true) : 현재 애니메이션 건너띄고, 다음 애니메이션 모두 삭제
+			$("button:eq(6)").click(function(){
+				move(".as_4");
+				$(this).prop("disabled", true);
+			});
+			
+			$("button:eq(7)").click(function(){
+				$(".as_4").stop(true, true);
+			});
+		});
+	</script>
+</body>
+</html>

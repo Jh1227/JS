@@ -1,0 +1,101 @@
+
+<!-- 04_effect/04-01_basic-effect.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>04-01_basic-effect</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+<style type="text/css">
+* { margin: 0; padding: 0; }
+button { width: 100px; }
+.box { width: 200px; height: 200px; border: 2px solid black; display: none; }
+</style>
+</head>
+<body>
+	<h1>기본 효과</h1>
+	<br>
+	<div id ="e1">
+		<button>show</button>
+		<button>hide</button>
+		<button>toggle</button>
+		<div class ="box">내용 1</div>
+	</div>
+	<br>
+	<div id ="e2">
+		<button>slideDown</button>
+		<button>slideUp</button>
+		<button>slideToggle</button>
+		<div class ="box">내용 2</div>
+	</div>
+	<br>
+	<div id ="e3">
+		<button>fadeIn</button>
+		<button>fadeOut</button>
+		<button>fadeToggle</button>
+		<div class ="box">내용 3</div>
+	</div>
+	<br>
+	
+	<!-- javascript -->
+	<script type="text/javascript">
+		/*
+			# 기본 효과
+			- $(selector).show( speed, easing, callback );
+			  > speed 	 : 속도 조절 - slow, fast, 1/1000초
+			    easing   : 움직임 효과 - swing, linear
+			    callback :
+		*/
+		$(document).ready(function(){
+			$("#e1 button:eq(0)").click(function(){
+				$("#e1 .box").show();
+			});
+			
+			$("#e1 button:eq(1)").click(function(){
+				$("#e1 .box").hide();
+			});
+			
+			$("#e1 button:eq(2)").click(function(){
+				$("#e1 .box").toggle(1000, 'swing');
+			});
+			
+			// slide : 선택된 요소를 위, 아래로 슬라이드
+			$("#e2 button:eq(0)").click(function(){
+				$("#e2 .box").slideDown("fast", "swing");
+			});
+			
+			$("#e2 button:eq(1)").click(function(){
+				$("#e2 .box").slideUp("slow", "swing");
+			});
+			
+			$("#e2 button:eq(2)").click(function(){
+				$("#e2 .box").slideToggle(500, 'linear');
+			});
+			
+			// fade : 선택된 요소를 서서히 나타나게 하고, 서서히 사라지게 합니다
+			$("#e3 button:eq(0)").click(function(){
+				$("#e3 .box").fadeIn("slow", "swing", function(){
+					$(this).text("fadeIn");
+				});
+			});
+			
+			$("#e3 button:eq(1)").click(function(){
+				$("#e3 .box").fadeOut("slow", "swing", function(){
+					$(this).text("fadeOut");
+				});
+			});
+			
+			$("#e3 button:eq(2)").click(function(){
+				$("#e3 .box").fadeToggle("slow", "swing", function(){
+					if($(this).css("display") == "none") {
+						$(this).text("???");
+					} else {
+						$(this).text("fadeToggle");
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>
