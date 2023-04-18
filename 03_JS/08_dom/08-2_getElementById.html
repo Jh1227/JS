@@ -1,0 +1,36 @@
+
+<!-- 08_dom/08-2_getElementById.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>08-2_getElementById</title>
+<script type="text/javascript">
+	/*
+		# getElementById
+		- HTML 요소의 지정한 id 를 선택합니다
+	*/
+</script>
+<style type="text/css">
+p { background-color: orange; color: blue; }
+span { color: red; }
+</style>
+</head>
+<body>
+	<h1 id="title">getElementById</h1>
+	<p id="first_p" onclick="this.style.color='green'"><span>첫번째 문장</span>입니다</p>
+	<script type="text/javascript">
+		var title = document.getElementById('title');
+		document.write('<p>title : ' + title + '</p>');
+		
+		var p = document.getElementById('first_p');
+		let text = 'p.id : ' + p.id + '<br>';
+		text += 'p.tagName : ' + p.tagName + '<br>';
+		text += 'p.childElementCount : ' + p.childElementCount + '<br>';
+		text += 'p.onclick : ' + p.onclick + '<br>';
+		
+		document.write(text)
+	</script>
+</body>
+</html>

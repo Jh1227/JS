@@ -1,0 +1,50 @@
+
+<!-- 08_dom/08-4_dom-search.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>08-4_dom-search</title>
+<script type="text/javascript">
+	function change() {
+		let spanList = document.getElementsByTagName('span');
+		for( let i = 0; i < spanList.length; i++ ) {
+			spanList[i].style.fontSize = '30px';
+			spanList[i].style.color = 'red';
+		}
+	}
+	
+	function onPlace() {
+		let placeAll = document.querySelectorAll('.place');
+		for( let i = 0; i < placeAll.length; i++ ) {
+			placeAll[i].style.fontWeight = 'bold';
+			placeAll[i].style.color = 'gold';
+		}
+	}
+	
+	function onFood() {
+		let foodAll = document.querySelectorAll('.food');
+		for( let i = 0; i < foodAll.length; i++ ) {
+			foodAll[i].style.fontWeight = 'bold';
+			foodAll[i].style.color = 'blue';
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<h1>DOM 객체 검색</h1>
+	<h2>과일 <button onclick ="change()">click</button></h2>
+	<p>1. <span>사과</span></p>
+	<p>2. <span>바나나</span></p>
+	<p>3. <span>딸기</span></p>
+	<br>
+	
+	<h1>가고 싶은곳, 먹고 싶은거</h1>
+	<p><button onclick="onPlace()">가고 싶은곳</button> <button onclick="onFood()">먹고 싶은거</button></p>
+	<p><span class="place">제주도</span> : <span class="food">흑돼지</span> 먹고 싶어요</p>
+	<p><span class="place">부산</span> : <span class="food">밀면</span> 먹고 싶어요</p>
+	<p><span class="place">광주</span> : <span class="food">육전</span> 먹고 싶어요</p>
+</body>
+</html>

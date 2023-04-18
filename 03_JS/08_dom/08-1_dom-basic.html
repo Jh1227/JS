@@ -1,0 +1,44 @@
+
+<!-- 08_dom/08-1_dom-basic.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>08-1_dom-basic</title>
+<script type="text/javascript">
+	/*
+		# DOM ( Document Object Mode )
+		- 웹페이지에 작성된 HTML 태그를 객체화 합니다
+		
+		# DOM tree
+		- HTML 태그의 포함관계에 따라서 DOM 객체의 트리가 생성됩니다
+		
+		# DOM 객체
+		- HTML 태그당 하나의 DOM 객체가 생성됩니다
+		- DOM 노드(node), DOM 요소(element)라고도 합니다
+		
+		# 브라우저 실행 순서 (DOM)
+		- HTML 문서 파싱해서 DOM Tree 생성
+		  이미지를 포함한 요소 로드
+		  페이지 로딩 완료
+		
+		# querySelector()
+		- html 문서에서 선택한 클래스 이름, 태그와 일치하는 첫번째 요소를 가져올 때 사용합니다
+		  일치하는 요소가 없으면 'null' 을 반환합니다
+	*/
+	alert('Process - 0');
+</script>
+</head>
+<body>
+	<h1>title - 1</h1>
+	<script type="text/javascript">alert('Process - 1');</script>
+	
+	<h2>title - 2</h2>
+	<script type="text/javascript">alert('Process - 2');</script>
+	<script type="text/javascript">
+		document.querySelector('h1').style.backgroundColor='red';
+		document.querySelector('h2').style.color='blue';
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!-- 08_dom/08-3_document.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>08-3_document</title>
+</head>
+<body>
+	<h1>document</h1>
+	<p class="para"> 첫번째 문단 </p>
+	<p class="para"> 두번째 문단 </p>
+	<p class="para"> 세번째 문단 </p>
+	<p> 네번째 문단 </p>
+	
+	<script type="text/javascript">
+	/*
+		# getElementsByTagName()
+		- 특정 태그를 가진 모든 요소를 선택합니다.
+	*/
+	let select = document.getElementsByTagName('p');
+	document.write('select : ' + select + '<br>');
+	
+	let p1 = document.getElementsByTagName('p')[1];  // 두번째 p 태그 선택
+	document.write('<p>p1 : ' + p1 + '</p>');
+	document.getElementsByTagName('p')[2].style.color='blue';  // 세번째 p 태그 선택
+	
+	/*
+		# querySelector()
+		- CSS 선택자로 요소를 선택합니다. 첫번째 나타나는 요소만 선택합니다.
+		  일치하는 요소가 없으면 'null' 을 반환합니다
+	*/
+	document.querySelector('.para').style.color='red';
+	
+	/*
+		# querySelectorAll()
+		- 특정 CSS 선택자를 가진 모든 요소를 선택해서 배열로 반환합니다
+	*/
+	let pAll = document.querySelectorAll('.para');
+	for( let i = 0; i < pAll.length; i++ ) {
+		pAll[i].style.fontWeight= 'bold';
+		pAll[i].style.fontSize = '20px';
+	}
+		
+	</script>
+</body>
+</html>

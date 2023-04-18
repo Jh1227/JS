@@ -1,0 +1,35 @@
+
+<!-- 08_dom/08-5_innerHTML.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>08-5_innerHTML</title>
+<script type="text/javascript">
+	/*
+		# innerHTML
+		- 문자 방식으로 요소를 생성합니다
+	*/
+	function change() {
+		let p = document.getElementById('inner');
+		p.innerHTML = '라이언<br><img src="../../image/img/라이언_생각.png" width ="200px" height ="250px">';
+	}
+</script>
+</head>
+<body>
+	<h1>inner HTML</h1>
+	<h2>가져오기</h2>
+	<ul id ="import">
+		<li>목록 - 1</li>
+		<li>목록 - 2</li>
+	</ul>
+	<br>
+	<h2>아래의 글자를 클릭하세요</h2>
+	<p id ="inner" onclick ="change()">여기를 클릭하세요</p>
+	<script type="text/javascript">
+		let add = document.getElementById('import').innerHTML;
+		document.write('<ul>' + add + '</ul>');
+	</script>	
+</body>
+</html>
