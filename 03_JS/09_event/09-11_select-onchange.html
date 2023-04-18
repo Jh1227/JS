@@ -1,0 +1,35 @@
+
+<!-- 09_event/09-11_select-onchange.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09-11_select-onchange</title>
+</head>
+<body>
+	<h1>select 이미지</h1>
+	<form action ="#">
+		<select id ="fruits" onchange ="selectImage()">
+			<option value ="../../image/event_image/strawberry.png"> 딸기 </option>
+			<option value ="../../image/event_image/apple.png"> 사과 </option>
+			<option value ="../../image/event_image/banana.png"> 바나나 </option>
+		</select>
+		<br>
+		<img id ="fruits_image" src ="../../image/event_image/strawberry.png">
+	</form>
+	
+	<script type="text/javascript">
+		/*
+			# selectedIndex
+			- select 태그에서 선택된 값의 index 를 반환합니다
+		*/
+		function selectImage() {
+			let sel = document.getElementById('fruits');
+			let img = document.getElementById('fruits_image');
+			img.src = sel.options[sel.selectedIndex].value;
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!-- 09_event/09-06_position-context.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09-6_position-context</title>
+<style type="text/css">
+p { font-size: 24px; }
+div { background-color: gold; width: 300px; }
+</style>
+</head>
+<body>
+	<h1>마우스 위치 및 버튼</h1>
+	<p>이미지 위에 마우스를 움직일 때 리스너가 실행되고 마우스의 위치를 보여줍니다</p>
+	<p>마우스 오른쪽 클릭은 금지되어 있어서 contextMenu 를 볼 수 없습니다</p>
+	<img src ="../../image/event_image/beach.png" onmousemove ="where(event)">
+	<br>
+	<div id ="value"></div>
+	
+	<script type="text/javascript">
+		/*
+			screen : 모니터 스크린 기준
+			client : 브라우저 기준
+			offset : 이벤트 기준
+			
+			# contextmenu
+			- 마우스 오른쪽 버튼을 클릭했을 때 웹페이지에 나오는 메뉴입니다
+		*/
+		let value = document.getElementById('value');
+		function where(e) {
+			let text = '버튼 : ' + e.button + '<br>';
+			text += '(screenX, screenY) : ' + e.screenX + ' - ' + e.screenY + '<br>';
+			text += '(clientX, clientY) : ' + e.clientX + ' - ' + e.clientY + '<br>';
+			text += '(offsetX, offsetY) : ' + e.offsetX + ' - ' + e.offsetY + '<br>';
+			text += '(X, Y) : ' + e.x + ' - ' + e.y + '<br>';
+			value.innerHTML = text;
+		}
+		
+		function hideMenu() {
+			alert('오른쪽 클릭 금지!!')
+			return false;
+		}
+		document.oncontextmenu = hideMenu;
+	</script>
+</body>
+</html>

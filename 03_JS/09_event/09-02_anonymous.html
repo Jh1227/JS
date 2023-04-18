@@ -1,0 +1,27 @@
+
+<!-- 09_event/09-02_anonymous.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09-2_anonymous</title>
+<script type="text/javascript">
+	window.onload = function() {
+		pa = document.getElementById('pa');
+		pa.onmouseover = function() {
+			pa.style.backgroundColor ='orange';
+		}
+		pa.addEventListener('mouseout',
+			function(){
+				pa.style.backgroundColor ='skyblue';
+			}
+		);
+	}
+</script>
+</head>
+<body>
+	<h1>익명 함수 리스너</h1>
+	<p id ="pa">마우스를 올려보세요!</p>
+</body>
+</html>

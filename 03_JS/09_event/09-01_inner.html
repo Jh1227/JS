@@ -1,0 +1,64 @@
+
+<!-- 09_event/09-01_inner.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09-1_inner</title>
+<!-- 
+	# 이벤트
+	- 마우스 클릭, 키보드 입력, 문서의 로딩 등 사용자의 입력 행위나 
+	  브라우저의 상태 변화를 자바스크립트 코드에게 알려줍니다
+	  
+	# 이벤트 리스너
+	- 발생한 이벤트에 대처하기 위해 작성된 자바스크립트 코드입니다
+	
+	# 작성 방법
+	- HTML 태그 안에 작성
+	  DOM 객체의 이벤트 리스트 property 에 작성
+	  DOM 객체의 addEventListener('이벤트', 함수) 메서드 사용
+-->
+<script type="text/javascript">
+
+	window.onload = function() {  // 문서가 완전히 로드되면 호출
+		let p = document.getElementById('p');
+		p.onmouseover = over;  // over() 함수를  onmouseover 리스너로 등록
+		p.onmouseout = out;  // out() 함수를 onmouseout 리스너로 등록
+		
+		let pe = document.getElementById('pe');
+		pe.addEventListener('mouseover', over2);  // over() 함수를 onmouseover 리스너로 등록
+		pe.addEventListener('mouseout', out2);  // out() 함수를 onmouseout 리스너로 등록
+	}
+	
+	function over() {
+		p.style.backgroundColor ='orange';
+	}
+	function out() {
+		p.style.backgroundColor ='silver';
+	}
+	
+	function over2() {
+		pe.style.backgroundColor ='orange';
+	}
+	function out2() {
+		pe.style.backgroundColor ='silver';
+	}
+</script>
+</head>
+<body>
+	<h1>HTML 태그에 리스너 작성</h1>
+	<p onmouseover ="this.style.backgroundColor='orange'"
+	   onmouseout ="this.style.backgroundColor='silver'"> 마우스를 올려보세요! </p>
+	<br>
+	<hr>
+	
+	<h1>객체의 이벤트 리스트 property 에 함수 적용</h1>
+	<p id ="p">마우스를 올려보세요!</p>
+	<br>
+	<hr>
+	
+	<h1>addEventListener 를 이용한 리스트 등록</h1>
+	<p id ="pe">마우스를 올려보세요!</p>
+</body>
+</html>

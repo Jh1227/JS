@@ -1,0 +1,44 @@
+
+<!-- 09_event/09-04_preventDefault.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09-4_preventDefault</title>
+<script type="text/javascript">
+	/* 
+		# 이벤트 디폴트 행동
+		- HTML 요소 자체가 가지고 있는 이벤트 입니다
+		
+		# 이벤트 디폴트 행동을 막는 방법
+		- 이벤트 리스너에서 false 반환
+	*/
+	function query() {
+		let res = confirm('네이버로 이동할까요?!');
+		return res;
+	}
+	
+	function query2(e) {
+		let res = confirm('네이버로 이동할까요?!');
+		if(res == false) {
+			e.preventDefault();
+		}
+	}
+	
+	function noAction(e) {
+		e.preventDefault();  // 이벤트 디폴트 행동 강제 취소
+	}
+</script>
+</head>
+<body>
+	<h1>이벤트 디폴트 행동</h1>
+	<!-- <a href ="http://www.naver.com" onclick ="return query()"> NAVER </a> -->
+	<a href ="http://www.naver.com" onclick ="query2(event)"> NAVER </a>
+	<br>
+	<form>
+		<input type ="checkbox"> 스낵 <br>
+		<input type ="checkbox" onclick ="noAction(event)"> 과일 <br>
+	</form>
+</body>
+</html>

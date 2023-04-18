@@ -1,0 +1,44 @@
+
+<!-- 09_event/09-08_focus.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09-8_focus</title>
+<script type="text/javascript">
+	/*
+		# 포커스
+		- 포커스는 현재 키 입력 위치를 표시합니다
+		- 브라우저는 포커스를 가지고 있는 HTML 태그 요소에 키를 공급합니다
+		
+		# onfocus
+		- 포커스를 얻을 때 발생하는 이벤트 리스너
+		
+		# onblur
+		- 포커스를 잃었을 때 발생하는 이벤트 리스너
+	*/
+	window.onload = function() {
+		document.getElementById('user_name').focus();
+	}
+	
+	function checkField(obj) {
+		if(obj.value == '') {
+			obj.focus();
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>focus</h1>
+	<p>이름을 입력하지 않으면, 다음 창으로 이동할 수 없습니다</p>
+	<form action ="#" name ="focusTest">
+		<label>이름 : </label>
+		<input type ="text" id ="user_name" name ="userName" onblur ="checkField(this)">
+		<br><br>
+		<label>전화번호 : </label>
+		<input type ="text" id ="user_tel" name ="userTel">
+		<br>
+	</form>
+</body>
+</html>

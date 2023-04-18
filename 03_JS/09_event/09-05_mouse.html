@@ -1,0 +1,42 @@
+
+<!-- 09_event/09-05_mouse.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09-5_mouse</title>
+<script type="text/javascript">
+	function down(obj) {  // 마우스 눌렀을 때
+		obj.style.fontStyle ='italic';
+		obj.style.fontWeight ='bold';
+	}
+	function up(obj) {  // 마우스를 떼었을 때
+		obj.style.fontStyle ='normal';
+		obj.style.fontWeight ='normal';
+	}
+	function over(obj) {
+		obj.style.borderColor ='orange';
+	}
+	function out(obj) {
+		obj.style.borderColor ='skyblue';
+	}
+</script>
+
+<style type="text/css">
+p { font-size: 20px; }
+span { border: 10px solid gray; display: inline-block; }
+</style>
+</head>
+<body>
+	<h1>마우스 리스너</h1>
+	<div>
+		<p> 마우스 관련
+			<span onmousedown ="down(this)"
+				  onmouseup ="up(this)"
+				  onmouseover ="over(this)"
+				  onmouseout ="out(this)"> 이벤트 </span> 발생
+		</p>
+	</div>
+</body>
+</html>

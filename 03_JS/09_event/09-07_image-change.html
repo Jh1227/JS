@@ -1,0 +1,45 @@
+
+<!-- 09_event/09-07_image-change.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>09-7_image-change</title>
+<style type="text/css">
+p { font-size: 24px; }
+img { width: 200px; height: 200px; }
+</style>
+</head>
+<body>
+	<h1>image change</h1>
+	<p>이미지를 클릭하면 다음 이미지를 보여줍니다</p>
+	<img src ="../../image/event_image/Penguins.png" onclick ="change(this)">
+	
+	<script type="text/javascript">
+	// 이미지 파일 이름 배열에 저장
+	let imageFiles = [
+		'../../image/event_image/Penguins.png',
+		'../../image/event_image/Lighthouse.png',
+		'../../image/event_image/Koala.png',
+		'../../image/event_image/puppy.png',
+		'../../image/event_image/Hydrangeas.png',
+		'../../image/event_image/Desert.png',
+	];
+	
+	let imgArr = new Array();
+	for(let i = 0; i < imageFiles.length; i++) {
+		imgArr[i] = new Image();  // 배열 요소에 image 객체 생성
+		imgArr[i].src = imageFiles[i];
+	}
+	
+	let next = 1;
+	function change(img) {
+		img.src = imgArr[next].src;  // 이미지 변경
+		++next;  // 다음 이미지 index
+		next %= imgArr.length; // 갯수를 넘기면 처음으로
+	}
+	
+	</script>
+</body>
+</html>
