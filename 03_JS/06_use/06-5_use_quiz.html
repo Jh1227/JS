@@ -1,0 +1,36 @@
+
+<!-- 06_use/06-5_use_quiz.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06-5_use_quiz</title>
+<!-- 
+	# 주문할 책 수량을 입력받고, 주문 수량 만큼 책 이름을 입력받아서 출력(테이블)하는 코드를 작성하세요
+	  Ex) 책 수량 입력 : 2
+	      제목 입력 : java
+	      제목 입력 : html
+	      ....
+-->
+</head>
+<body>
+	<table border="1">
+		<script>
+			var count = parseInt(prompt('책 수량 입력하세요'));
+			var list = new Array();
+			for ( let i = 0; i < count; i++ ) {
+				list[i] = prompt('제목 입력')
+			}
+			document.write('<caption>책 주문</caption>');
+			document.write('<tr>');
+			document.write('<th> 수량 </th>');
+			document.write('<th> 책 제목 </th>');
+			document.write('</tr>');
+			document.write('<tr>');
+			document.write('<td>', count, '</td><td>', list, '</td>');
+			document.write('</tr>');
+		</script>
+	</table>
+</body>
+</html>
