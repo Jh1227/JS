@@ -1,0 +1,40 @@
+
+<!-- 05_data/05-03_JSON.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05-03_JSON</title>
+<!-- 
+	# JSON
+	- 텍스트 기반의 데이터 교환 형식입니다
+	- 자바스크립트에서 유래되어 자바스크립트 구문을 사용합니다
+	- 자바스크립트에서 JSON 형식으로 작성된 문자열을 기본 자바스크립트 객체로 변환하는 내장 함수가 있습니다
+	
+	# JSON 구문
+	- 데이터는 '이름 : 값' 의 한쌍으로 작성됩니다
+	  데이터의 구분은 쉼표로 합니다
+-->
+</head>
+<body>
+	<h1>JSON</h1>
+	<br>
+	<p id ="test"></p>
+	
+	<!-- script -->
+	<script type="text/javascript">
+		var data = {
+			"name" : "test",
+			"num" : 10,
+			"stn" : "JSON data"
+		};
+		//var res = data.name;
+		//document.getElementById("test").innerHTML = res;
+		
+		for(v in data){
+			document.getElementById("test").innerHTML += v + " - " + data[v] + "<br>";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+<!-- 05_data/05-04_AJAX-JSON.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05-04_AJAX-JSON</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+<style type="text/css">
+table { width: 500px; border-collapse: collapse; }
+th, td { border: 1px solid gray; font-size: 24px; text-align: center; }
+</style>
+</head>
+<body>
+	<h1>AJAX JSON</h1>
+	<br>
+	<table>
+		<caption>&lt; 학생 점수 &gt;</caption>
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>JAVA</th>
+				<th>HTML</th>
+				<th>CSS</th>
+				<th>JQUERY</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+	
+	<!-- script -->
+	<script type="text/javascript">
+		$.ajax({
+			type: "GET", /* 전송 방식 */
+			url: "data.json", /* 로드하는 파일명 */
+			dataType: "json", /* 데이터 형식 */
+			success: function(data){ /* 로드에 성공하면 실행 */
+				console.log(data);
+				let el = "";
+				$.each(data, function(index, obj){
+					el += "<tr>"
+					el += "<td>" + obj.name + "</td>";
+					el += "<td>" + obj.score1 + "</td>";
+					el += "<td>" + obj.score2 + "</td>";
+					el += "<td>" + obj.score3 + "</td>";
+					el += "<td>" + obj.score4 + "</td>";
+					el += "</tr>";
+				});
+				$("table tbody").append(el);
+			},
+			error: function(xhr){ /* 로드에 실패하면 실행 */
+				console.log(xhr.status + " - " + xhr.errorText);
+			}
+		})
+	</script>
+</body>
+</html>

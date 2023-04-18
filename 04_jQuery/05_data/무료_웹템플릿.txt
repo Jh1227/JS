@@ -1,0 +1,54 @@
+
+무료 웹 템플릿 사이트를 소개합니다.
+아래의 사이트들은 웹 템플릿을 무료로 제공하지만
+수정/재배포/판매에 대한 기준은 템플릿 마다 다릅니다.
+사용하실 템플릿의 라이센스를 확인하시고 사용하시기 바랍니다.
+
+
+부트스트랩
+https://getbootstrap.kr/
+
+부트스트랩 사용
+https://datamoney.tistory.com/149
+
+start bootstrap
+블로그 형식 / admin 형식 모두 다양한 곳입니다.
+HTML 뿐 아니라, REACT / VUEJS / ANGULAR 템플릿도 제공하고 있습니다.
+https://startbootstrap.com/
+
+
+bootstrap themes
+세련된 디자인이 많은 사이트입니다.
+bootstrap 기준으로 만들어진 템플릿이기 때문에 편하게 사용하실 수 있습니다.
+https://bootstrapthemes.co/items/free-bootstrap-templates/
+
+
+웹쟁이
+한글 사이트로, 웹 템플릿 외에도 디자인 소스 /  애니메이션도 많이 제공합니다.
+다양한 분위기의 템플릿이 많은 사이트입니다.
+http://webjangi.com/design/freetemplate
+
+
+templated
+깔끔한 블로그식 디자인이 많은 사이트입니다.
+웹 포트폴리오에 어울리는 디자인이 많은 곳입니다.
+https://templated.co/
+
+
+html5up
+깔끔하고 세련된 디자인 위주로 모아둔 사이트입니다.
+100% 무료로 제공되고 있습니다.
+https://html5up.net/
+
+
+creative-tim
+개인적으로 애용하는 곳입니다.
+종류는 많지 않지만, 같은 디자인이어도 HTML / REACT / VUEJS / ANGULAR 로 제공한다는 장점이 있습니다.
+https://www.creative-tim.com/templates
+
+
+
+https://www.dbcut.com/?sst=wr_hit&sod=desc&sfl=&stx=&sca=&page=1
+
+http://www.goodweb.design/tags/navbar
+

@@ -1,0 +1,37 @@
+
+<!-- 05_data/05-01_ajax.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05-01_ajax</title>
+<!-- 
+	# AJAX ( Asynchronous JavaScript and XML )
+	- 서버와 데이터를 교환하는 기술입니다
+	- 전체페이지를 로드하지 않아도 서버와 데이터를 교환하고 웹페이지의 일부를 업데이트 할 수 있습니다
+-->
+</head>
+<body>
+	<h1>AJAX</h1>
+	<br>
+	<div id ="test">
+		<h2>XMLHttpRequest object</h2>
+		<button type ="button" onclick ="loadDoc()">내용 변경</button>
+	</div>
+	
+	<!-- script -->
+	<script type="text/javascript">
+		function loadDoc(){
+			var xhttp = new XMLHttpRequest(); // 서버와 데이터 교환을 하기 위한 XMLHttpRequest 객체 생성
+			xhttp.onreadystatechange = function(){ // 속성이 변경될 때 호출할 함수 정의
+				if(this.readyState == 4 && this.status == 200){ // 데이터 받은거 확인, 요청 성공
+					document.getElementById("test").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET", "testfile.txt", true); // open( method, 파일 위치, async )
+			xhttp.send(); // 서버로 요청 보내기 
+		};
+	</script>
+</body>
+</html>

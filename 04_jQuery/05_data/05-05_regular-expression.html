@@ -1,0 +1,31 @@
+
+<!-- 05_data/05-05_regular-expression.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05-05_regular-expression</title>
+<!-- 
+	# 정규 표현식 ( regular expression )
+	- 문자열에서 특정 문자 조합을 찾기 위한 패턴입니다
+	
+	# pattern 속성
+	- input 태그의 pattern 속성에 정규표현식을 작성해서 유효성 검사를 할 수 있습니다
+-->
+<style type="text/css">
+input { font-size: 24px; }
+</style>
+</head>
+<body>
+	<h1>pattern</h1>
+	<br>
+	<form action ="#">
+		<div>
+			<input type ="text" id ="user_tel" name ="userTel" pattern ="^01([0|1])-[0-9]{3,4}-[0-9]{4}$" placeholder ="010-0000-0000">
+		</div>
+		<br>
+		<input type ="submit" value ="전송">
+	</form>
+</body>
+</html>
