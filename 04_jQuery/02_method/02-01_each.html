@@ -1,0 +1,51 @@
+
+<!-- 02_method/02-01_each.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02-01_each</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+	/*
+		# .each()
+		- jQuery 의 배열 메서드를 사용해서 배열이나 객체에 쉽게 접근할 수 있습니다
+		- $.each(배열명 or 객체명, function(index, value){
+			
+		  });
+	
+		  $(selector).each(funtion(index,value){
+			  
+		  });
+	*/
+	$(document).ready(function(){
+		let city = ["서울", "부산", "광주", "제주도", "인천"];
+		$.each(city, function(index, value){
+			console.log(index + " - " + value);
+		});
+		
+		$("div").each(function(index, value){
+			console.log(index + " - " + value);
+			console.log("class : " + $(this).attr("class"));  // $("div:eq(0)").attr("class")
+		});
+	});
+	
+	var subject = {
+		title : "jQuery",
+		code : "001",
+		day : 20
+	};
+	$.each(subject, function(key, value){
+		console.log(key + " - " + value);
+	});
+	
+</script>
+</head>
+<body>
+	<h1>each 메서드</h1>
+	<div class ="c1">내용 1</div>
+	<div class ="c2">내용 2</div>
+	<div class ="c3">내용 3</div>
+</body>
+</html>

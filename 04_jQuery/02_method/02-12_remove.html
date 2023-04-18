@@ -1,0 +1,47 @@
+
+<!-- 02_method/02-12_remove.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02-12_remove</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+</head>
+<body>
+	<h1> 삭제 </h1>
+	<br>
+	<div id ="r1"><a href ="#">링크</a></div>
+	<br>
+	<div id ="r2">
+		<span>내용 1</span>
+	</div>
+	<br>
+	<div id ="r3">
+		<span>내용 2</span>
+	</div>
+	<br>
+	<div id ="r4">
+		<span>내용 3</span>
+	</div>
+	<br>
+	<button>삭제</button>
+	<button>detach</button>
+	
+	<!-- javascript -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			let detachCheck;
+			$("button:eq(0)").click(function(){
+				$("#r1 a").removeAttr("href"); // 속성 삭제
+				$("#r2").empty(); // 하위 속성 삭제
+				$("#r3").remove(); // 선택한 속성 삭제
+				detachCheck = $("#r4").detach();
+			});
+			$("button:eq(1)").click(function(){
+				detachCheck.insertAfter("#r2");
+			});
+		});
+	</script>
+</body>
+</html>

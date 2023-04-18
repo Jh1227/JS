@@ -1,0 +1,64 @@
+
+<!-- 02_method/02-05_class_add-remove.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>02-05_class_add-remove</title>
+<script type="text/javascript" src="../jquery-3.6.4.min.js"></script>
+<style type="text/css">
+* { margin: 0; padding: 0; }
+.box { width: 100px; border-bottom: 2px solid silver; text-align: center; padding: 20px; margin-bottom: 10px; }
+#c2 { text-align: center; }
+.circle0, .circle1, .circle2 { border: 2px solid orange; width: 200px; height: 60px; font-size: 24px; border-radius: 30px; line-height: 50px; display: inline-block; }
+.contents, .bg { border: 1px solid red; width: 100px; height: 100px; }
+</style>
+</head>
+<body>
+	<h1>class add, remove</h1>
+	<div id ="c1">
+		<div>jQuery</div>
+	</div>
+	<br>
+	<div id ="c2">
+		<div>html</div>
+		<div>css</div>
+		<div>javascript</div>
+	</div>
+	<hr>
+	<div id ="r1">
+		<div class ="contents">jQuery</div>
+	</div>
+	<br>
+	<div id ="r2">
+		<div class ="d1 bg">html</div>
+		<div class ="d2 bg">css</div>
+		<div class ="d3 bg">javascript</div>
+	</div>
+	
+	<!-- javascript -->
+	<script type="text/javascript">
+		/*
+			# addClass()
+			- class 속성을 추가합니다
+			
+			# removeClass()
+			- class 속성을 삭제합니다
+		*/
+		$(document).ready(function(){
+			$("#c1 > div").addClass("box");
+			
+			$("#c2 > div").addClass(function(index){
+				return "circle" + index;
+			});
+			
+			$("#r1 > div").removeClass("contents");
+			
+			$("#r2 > div").removeClass(function(){
+				return "bg";
+			});
+		});
+	</script>
+</body>
+</html>
