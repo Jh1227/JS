@@ -1,0 +1,48 @@
+
+<!-- 07_object/07-3_prototype.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>07-3_prototype</title>
+</head>
+<body>
+	<script type="text/javascript">
+	/*
+		# prototype
+		- 객체의 메서드를 '생성자 함수' 안에 정의하지 않고, 나중에 추가할 수 있습니다
+	*/
+	function Rectangle(width, height) {
+		this.width = width;
+		this.height = height;
+	}
+	var rectA = new Rectangle(3, 4);
+	document.write('가로 : ' + rectA.width + '<br>');
+	document.write('세로 : ' + rectA.height + '<br>');
+	//document.write('넓이 : ' + rectA.area() + '<br>');
+	document.write('<br>');
+	
+	Rectangle.prototype.area = function() {
+		return this.width * this.height;
+	}
+	document.write('넓이 : ' + rectA.area() + '<br>');
+	document.write('<br>');
+	
+	/*
+		# for .. in 문
+		- 객체의 속성명에 쉽게 접근이 가능합니다
+		  for(var 변수 in 객체명) {
+			  
+		  }
+	*/
+	for(var p in rectA) {
+		document.write('property name : ' + p + ' - ' + rectA[p] + '<br>');
+	}
+	
+	
+	
+	
+	</script>
+</body>
+</html>

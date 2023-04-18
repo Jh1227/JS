@@ -1,0 +1,62 @@
+
+<!-- 07_object/07-2_object.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>07-2_object</title>
+</head>
+<body>
+	<script type="text/javascript">
+	/*
+		# 객체 생성자 함수
+		- function 함수(매개변수_1, 매개변수_2) {
+				this.property = 매개변수_1;
+				this.property = 매개변수_2;
+				this.method = function() {
+					
+				};
+		  }
+		  var 변수 = new 함수(매개변수_1, 매개변수_2);
+	*/
+	function Subject(name, credit) {
+		this.name = name;
+		this.credit = credit;
+		this.info = function() {
+			return this.name + ' - ' + this.credit + '학점';
+		};
+	}
+	var html = new Subject('html', 3);
+	document.write('과목명 : ' + html.name + '<br>');
+	document.write('학점 : ' + html.credit + '<br>');
+	document.write(html.info() + '<br>');
+	document.write('<br>');
+	
+	var js = new Subject('javascript', 4);
+	document.write('과목명 : ' + js.name + '<br>');
+	document.write('학점 : ' + js.credit + '<br>');
+	document.write(js.info() + '<br>');
+	document.write('<br>');
+	
+	// 속성 삭제
+	delete js.name;
+	document.write('과목명 : ' + js.name + '<br>');
+	
+	// 속성 추가
+	js.name = 'JavaScript';
+	document.write('과목명 : ' + js.name + '<br>');
+	
+	// 속성 변경
+	js.info = function() {
+		return '과목명 : ' + this.name + ' - ' + this.credit + '학점';
+	}
+	document.write(js.info() + '<br>');
+	document.write('<br>');
+	
+	document.write(html.info() + '<br>');
+	document.write('<br>');
+	
+	</script>
+</body>
+</html>

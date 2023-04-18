@@ -1,0 +1,58 @@
+
+<!-- 07_object/07-4_class.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>07-4_class</title>
+<script type="text/javascript">
+	/*
+		# class
+		- ES6 에서 추가된 구문입니다
+		- class 클래스명 {
+			  constructor(매개변수_1, ....) {
+				  this.이름 = 매개변수_1;
+				  ....
+			  }
+			  
+			  메서드명(){ }
+			  
+			  get 메서드명(){ }
+			  
+			  set 메서드명(){ }
+		  }
+	*/
+	class Subject {
+		constructor(name, credit) {
+			this.name = name;
+			this.credit = credit;
+		}
+		
+		info() {
+			return '과목명 : ' + this.name + ' - ' + this.credit + '학점';
+		}
+		
+		get getName() {
+			return this.name;
+		}
+		
+		set setCredit(credit) {
+			this.credit = credit;
+		}
+	}	
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+		let html = new Subject('html', 3);
+		document.write('과목명 : ' + html.getName + '<br>');
+		document.write('과목명 : ' + html.name + '<br>');
+		document.write(html.info() + '<br>');
+		document.write('<br>');
+		
+		html.setCredit = 4;
+		document.write(html.info() + '<br>');
+	</script>
+</body>
+</html>

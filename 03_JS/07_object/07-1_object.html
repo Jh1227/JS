@@ -1,0 +1,67 @@
+
+<!-- 07_object/07-1_object.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>07-1_object</title>
+</head>
+<body>
+	<script type="text/javascript">
+	/*
+		# 객체의 데이터는 '이름 : 값'의 쌍으로 이루어져 있으며 이것을 속성(properties)이라고 합니다
+		  객체의 속성은 객체의 속성 값을 저장하는 프로퍼티와 객체의 메서드로 나누어 집니다
+	*/
+	
+	/*
+		# 객체 리터럴( object literal )
+		- var 변수 = { property : value, ....,  method : function(){}, .... }
+		- 객체 안에서 자신을 의미하는 'this' 키워드를 사용할 수 있습니다
+	*/
+	var sub = {
+		subject : 'java',
+		credit : 3,
+		info : function() {
+			return sub.subject + ' - ' + sub.credit + '학점';
+		},
+		info2 : function() {
+			return this.subject + ' - ' + this.credit + '학점'; 
+		}
+	};
+	document.write('과목명 : ' + sub.subject + '<br>');
+	document.write('학점 : ' + sub.credit + '<br>');
+	document.write(sub.info() + '<br>');
+	document.write(sub.info2() + '<br>');
+	document.write('<br>');
+	
+	// delete : 속성 삭제
+	delete sub.credit;
+	document.write('학점 : ', sub.credit, '<br>');
+	
+	// 속성 추가
+	sub.credit = 4;
+	document.write('학점 : ', sub.credit, '<br>');
+	
+	// 속성 변경
+	sub.info2 = function() {
+		return '과목명 : ' + this.subject + ' - ' + this.credit + '학점';
+	}
+	document.write(sub.info2() + '<br>');
+	document.write('<br>');
+	
+	/*
+		# 심볼( Symbol ) 데이터
+		- 유일한 식별자를 의미합니다
+		- 동일한 객체의 속성명에 대한 충돌을 방지할 수 있습니다
+		- 속성명을 '[]' 로 작성합니다
+	*/
+	var subject = {
+		[name] : 'javascript',
+		name : 'html',
+	}
+	document.write(subject[name] + ' - ' + subject.name + '<br>');
+	
+	</script>
+</body>
+</html>
