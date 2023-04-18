@@ -1,0 +1,30 @@
+
+<!-- 03_function/03-3_callback.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03-3_callback</title>
+<script type="text/javascript">
+	/*
+		# 콜백 함수
+		- 함수의 매개변수로 함수를 전달합니다
+	*/
+	function tenLoop(message) {
+		for (let i=0; i<10; i++) {
+			document.write((i+1) + ' 회 - ');
+			message();
+		}
+	}
+	
+	tenLoop(function() {
+		document.write('- run -<br>');
+	});
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

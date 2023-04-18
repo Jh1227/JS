@@ -1,0 +1,54 @@
+
+<!-- 03_function/03-1_function.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03-1_function</title>
+<script type="text/javascript">
+	/* 
+		# 일반 함수
+		- 함수의 선언과 전, 후 어디서나 호출이 가능합니다
+	*/
+	hi();
+	function hi() {
+		document.write("안녕하세요~!!<br>");
+	}
+	hi();
+	
+	function nl() {
+		document.write('<br>');
+	}
+	nl();
+	
+	/*
+		# 익명 함수
+		- 변수에 함수 데이터를 저장해서, 함수를 변수처럼 사용할 수 있습니다
+		- 변수 선언 이전에 함수를 호출할 수 없습니다
+	*/
+	var hi2 = function() {
+		document.write('hello :)');
+	}
+	hi2();
+	nl();
+	
+	/*
+		# 즉시 실행 함수
+		- 한번만 사용되는 함수 입니다. 
+		- 선언과 동시에 실행되며, 함수명이 없기 때문에 재호출 할 수 없습니다
+	*/
+	(function() {
+		start();
+	})();
+	function start() {
+		document.write('- start -');
+	}
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

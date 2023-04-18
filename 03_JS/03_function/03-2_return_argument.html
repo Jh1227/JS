@@ -1,0 +1,85 @@
+
+<!-- 03_function/03-2_return_argument.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>03-2_return_argument</title>
+<script type="text/javascript">
+	/*
+		# return
+	*/
+	function point() {
+		let java = 100;
+		let html = 97;
+		let avg = (java + html) / 2;
+		return avg;
+	}
+	document.write('평균 : ', point(), '<br>');
+	document.write('<br>');
+	
+	/*
+		# 매개변수
+	*/
+	function quizPass(name, sub1, sub2, sub3) {
+		let res = name + ' 학생 - ';
+		if(sub1 >= 60 && sub2 >= 60 && sub3 >= 60) {
+			res += 'pass';
+		} else {
+			res += 'fail';
+		}
+		return res += '<br>';
+	}
+	document.write(quizPass('stuA', 60, 60, 59));
+	document.write(quizPass('stuA', 60, 60, 60));
+	document.write('<br>');
+	
+	/*
+		# 화살표 함수
+		- '=>' 를 사용해서 함수를 간결하게 표현할 수 있습니다
+	*/
+	var add = (s1, s2) => s1 + s2;
+	document.write('1 + 7 : ', add(1, 7));
+	document.write('<br>');
+	
+	var calcAvg = (s1, s2) => {
+		var res = (s1 + s2) / 2;
+		return res;
+	}
+	document.write('평균 : ', calcAvg(1, 7));
+	document.write('<br>');
+	document.write('<br>');
+	
+	/*
+		# 클로저( closure )
+		- 함수 호출시 지역변수를 초기화 하지 않고, 이전에 연산된 값으로 참조 할 때 사용합니다
+	*/
+	function general() {
+		var a = 0;
+		return ++a;
+	}
+	document.write(general());
+	document.write('<br>');
+	document.write(general());
+	document.write('<br>');
+	document.write('<br>');
+	
+	function up() {
+		var n = 0;
+		return function() {
+			return ++n;
+		}
+	}
+	var increase = up();
+	document.write(increase());
+	document.write('<br>');
+	document.write(increase());
+	document.write('<br>');
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
