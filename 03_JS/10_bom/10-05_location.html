@@ -1,0 +1,36 @@
+
+<!-- 10_bom/10-05_location.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>10-05_location</title>
+</head>
+<body>
+	<h1>사이트 이동</h1>
+	<span>사이트 선택 : </span>
+	<select id ="site">
+		<option value ="http://www.naver.com"> NAVER </option>
+		<option value ="http://www.daum.net"> DAUM </option>
+		<option value ="http://www.google.com"> Google </option>
+	</select>
+	<p><button onclick ="load()"> 이동 </button></p>
+	<br>
+	<p><button onclick ="javascript:location.reload()"> reload </button></p>
+	<br>
+	<p><button onclick ="javascript:location.replace('http://www.naver.com')"> replace </button></p>
+	<!-- 
+		# location.href : 새로운 페이지로 이동. 히스토리에 기록됩니다
+		  location.replace : 기존 페이지를 새로운 페이지로 변경. 히스토리에 기록되지 않습니다
+	-->
+	
+	<!-- javascript -->
+	<script type="text/javascript">
+		function load() {
+			let sel = document.getElementById('site');
+			location.href = sel.options[sel.selectedIndex].value;
+		}
+	</script>
+</body>
+</html>

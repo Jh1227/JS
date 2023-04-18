@@ -1,0 +1,63 @@
+
+<!-- 10_bom/10-07_Quiz_register.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>10-07_Quiz_register</title>
+<style type="text/css">
+span { color: red; font-weight: bold; }
+</style>
+</head>
+<body>
+	<h2>정보 입력</h2>
+	<br>
+	<form id ="register" action ="10-07_Quiz_success.html">
+		<input type="text" id ="user_id" name ="userId" placeholder ="아이디">
+		<span> ( * 필수항목 )</span>
+		<br>
+		<input type ="password" id ="user_pw" name ="userPw" placeholder ="비밀번호"> 
+		<span> ( * 필수항목 )</span>
+		<br>
+		<input type ="password" id ="re_pw" name ="rePw" onchange ="pwCheck()" placeholder ="비밀번호 확인">
+		<label id ="pw_result"></label>
+		<br>
+		<input type ="text" id ="user_name" name ="userName" placeholder ="이름">
+		<hr>
+		<input type ="button" value ="등록" onclick ="checkData()">
+	</form>
+	<!-- javascript -->
+	<script type="text/javascript">
+		/* 입력 확인 */
+		function checkData() {
+			if(document.getElementById('user_id').value == '') {
+				alert('아이디는 필수 사항 입니다!')
+				document.getElementById('user_id').focus();
+			} else if(document.getElementById('user_pw').value == '') {
+				alert('비밀번호는 필수 사항 입니다!')
+				document.getElementById('user_pw').focus();
+			} else if(document.getElementById('re_pw').value == '') {
+				alert('비밀번호 확인은 필수 사항 입니다!')
+				document.getElementById('re_pw').focus();
+			} else {
+				register.submit();
+			}
+		}
+		
+		/* 비밀번호 확인 */
+		function pwCheck() {
+			let pw1 = document.getElementById('user_pw').value;
+			let pw2 = document.getElementById('re_pw').value;
+			if(pw1 == pw2) {
+				document.getElementById('pw_result').innerHTML ="확인!!";
+			} else {
+				document.getElementById('pw_result').innerHTML ="불일치!!";
+				document.getElementById('user_pw').value ='';
+				document.getElementById('re_pw').value ='';
+				document.getElementById('user_pw').focus();
+			}
+		}
+	</script>
+</body>
+</html>

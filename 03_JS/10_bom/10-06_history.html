@@ -1,0 +1,39 @@
+
+<!-- 10_bom/10-06_history.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>10-06_history</title>
+<!-- 
+	# history 객체
+	- 방문한 웹페이지 정보를 리스트(history)로 관리하는 객체입니다
+	  > back()    : 히스토리에 있는 이전 페이지로 이동. 브라우저의 'back' 과 동일
+	    forward() : 히스토리에 있는 다음 페이지로 이동. 브라우저의 'forward' 와 동일
+	    go( n )   : 히스토리에서 현재 웹페이지에서 n만큼 이동
+	    			n 값이 양수이면 이후 페이지, 음수이면 이전 페이지로 이동
+-->
+<style type="text/css">
+button {
+	background-color: orange; 
+	width: 200px;
+	font-size: 24px;
+	padding: 4px; margin: 5px;
+	border: 2px solid red;
+	border-radius: 10px;
+}
+button:hover { background-color: gold; }
+</style>
+</head>
+<body>
+	<h1>history</h1>
+	<br>
+	<button onclick ="history.back()"> back </button>
+	<br>
+	<button onclick ="history.forward()"> forward </button>
+	<br>
+	<button onclick ="history.go(2)"> go(2) </button>
+	<br>
+</body>
+</html>
